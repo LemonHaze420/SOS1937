@@ -1,0 +1,125 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "archive"=.\archive\archive.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    archive
+    .\archive
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "boris2a"=.\boris2a\boris2a.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    boris2a
+    .\boris2a
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "car"=.\car\car.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    car
+    .\car
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "graphics"=.\graphics\graphics.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    graphics
+    .\graphics
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "graphicslib"=.\graphicslib\graphicslib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "sos1937CE"=.\sos1937CE.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    sos1937CE
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name archive
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name car
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name boris2a
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name graphicslib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    sos1937CE
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+
