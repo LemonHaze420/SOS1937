@@ -1,12 +1,9 @@
-// $Header$
+//================================================================================================================================
+// modelStore.cpp
+// ----------------
+//
+//================================================================================================================================
 
-// $Log$
-// Revision 1.2  2000-01-17 12:37:07+00  jjs
-// Latest version has corrected Alpha Tested polygons.
-//
-// Revision 1.1  2000-01-13 17:27:05+00  jjs
-// First version that supports the loading of objects.
-//
 
 #include "BS2all.h"
 
@@ -14,6 +11,8 @@
 
 
 model * modelChain;
+
+extern void dprintf(char *,...);
 
 void startModelStore()
 {
@@ -23,7 +22,7 @@ void startModelStore()
 
 extern char tempBuffer[];
 
-model * getModelPtr( char * filename, float modelscale, bool uniqueCopy, char * SSname)
+model * getModelPtr( char * filename, float modelscale, bool uniqueCopy, char * SSname )
 {
 	bool matched = false;
 	bool invisible = false;
@@ -145,7 +144,7 @@ model * getModelPtr( char * filename, float modelscale, bool uniqueCopy, char * 
 		for(numlods=0;numlods<modelChain->meshct;numlods++)
 		{
 			if(numlods <= modelChain->highest_visible_mesh)
-				loadMulderFile( lodfilenames[numlods], modelChain->meshData+numlods, modelscale, numlods?NULL:SSname,  false);
+				loadMulderFile( lodfilenames[numlods], modelChain->meshData+numlods, modelscale, numlods?NULL:SSname,  true );
 		}
 
 		boundBox * boundingBox = &modelChain->boundingBox;
@@ -169,7 +168,7 @@ model * getModelPtr( char * filename, float modelscale, bool uniqueCopy, char * 
 		centroid->y = ( meshData->MinCoordY +  meshData->MaxCoordY ) * 0.5f;
 		centroid->z = ( meshData->MinCoordZ +  meshData->MaxCoordZ ) * 0.5f;
 
-		modelChain->boundingRadius = sqrtf(centroid->x * centroid->x  + 
+		modelChain->boundingRadius = (float)sqrt(centroid->x * centroid->x  + 
 					 centroid->y * centroid->y +  centroid->z * centroid->z);
 
 		if(invisible)modelChain->highest_visible_mesh=-1;
@@ -189,22 +188,37 @@ void removeModelStore()
 	{
 		model * copymodel;
 
+		dprintf("removing %s [model %lx mesh %lx]",myModel->filename,myModel,myModel->meshData);
+
 		copymodel = myModel->copynext;
 		while(copymodel)
 		{
 			//filename field is UNUSED so we DONT delete it!!
 
+			dprintf("removing copy %s [model %lx mesh %lx]",copymodel->filename,
+				copymodel,copymodel->meshData);
+
 			myModelNew = copymodel->copynext;
 			delete [] copymodel->meshData;
+			dprintf("copy mesh deleted");
 			delete copymodel;
+			dprintf("copy model deleted");
 			copymodel = myModelNew;
 		}
 		
 		delete myModel->filename;
+		dprintf("main model name deleted");
 		myModelNew = myModel->next;
 		delete [] myModel->meshData;
+		dprintf("main mesh deleted");
 		delete myModel;
+		dprintf("model deleted");
 		myModel = myModelNew;
 	}
 	modelChain = NULL;
 }
+
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

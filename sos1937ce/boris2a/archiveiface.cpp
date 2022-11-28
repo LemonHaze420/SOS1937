@@ -1,12 +1,8 @@
-// $Header$
-
-// $Log$
-// Revision 1.1  2000-01-13 17:27:02+00  jjs
-// First version that supports the loading of objects.
+//================================================================================================================================
+// archive.cpp
+// -----------
 //
-// Revision 1.0  1999-12-07 12:14:29+00  jjs
-// Initial revision
-//
+//================================================================================================================================
 
 #include "BS2all.h"
 
@@ -40,7 +36,7 @@ void initialiseArcHandles( void )
 //--------------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------
 
-ulong findFreeHandle( char * area, long size)
+ulong findFreeHandle( char * area, ulong size)
 {
 
 	handledata * hptr = &handles[1];
@@ -58,6 +54,7 @@ ulong findFreeHandle( char * area, long size)
 		} 
 		hptr++;
 	}
+	fatalError("No free archive handles");
 	return(0);
 }
 
@@ -67,7 +64,7 @@ ulong findFreeHandle( char * area, long size)
 bool arcPush( char * archiveName )
 {
 	if(!archivestack.Push(archiveName))
-		return false;
+		fatalError("cannot push archive %s",archiveName);
 	return true;
 }
 
@@ -84,8 +81,8 @@ void arcPopAll()
 ulong  arcExtract_3df(   char * fileName )
 {
 	
-//	if(!fileName)
-//		fatalError("attempted to load null file");
+	if(!fileName)
+		fatalError("attempted to load null file");
 	//
 	// We shall attempt to extract the appropriate archive texture in 
 	// the most appropriate format.
@@ -94,7 +91,6 @@ ulong  arcExtract_3df(   char * fileName )
 	ulong areasize;
 	char *area;
 	
-	if( (area = archivestack.MallocAndExtract( fileName, FMT_3DF_VQ, &areasize	)) == NULL)
 	if( (area = archivestack.MallocAndExtract( fileName, FMT_3DF_565, &areasize	)) == NULL)
 		if( (area = archivestack.MallocAndExtract( fileName, FMT_3DF_1555, &areasize )) == NULL)
 			if( (area = archivestack.MallocAndExtract( fileName, FMT_3DF_4444, &areasize )) == NULL)
@@ -185,7 +181,7 @@ long arcGetSize( ulong handle )
 //--------------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------
 
-void  arcRead( char * outStr, long count, ulong handle )
+void  arcRead( char * outStr, ulong count, ulong handle )
 {
 	handledata * hptr = &handles[ handle ];
 
@@ -201,7 +197,7 @@ void  arcRead( char * outStr, long count, ulong handle )
 //--------------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------
 
-bool  arcGets( char * outStr, long count, ulong handle )
+bool  arcGets( char * outStr, ulong count, ulong handle )
 {
 	handledata * hptr = &handles[ handle ];
 	long bytesLeft = hptr->size - hptr->nextByte;
@@ -234,7 +230,7 @@ bool  arcGets( char * outStr, long count, ulong handle )
 	return( true );
 }
 
-bool  arcGets_NoWhiteSpace( char * outStr, long count, ulong handle )
+bool  arcGets_NoWhiteSpace( char * outStr, ulong count, ulong handle )
 {
 	handledata * hptr = &handles[ handle ];
 	long bytesLeft = hptr->size - hptr->nextByte;
@@ -283,3 +279,8 @@ void  arcDispose( ulong handle )
 	hptr->used = false;
 	free( hptr->area );
 }
+
+
+//================================================================================================================================
+// END OF FILE
+//================================================================================================================================

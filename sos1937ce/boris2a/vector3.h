@@ -1,12 +1,8 @@
-// $Header$
-
-// $Log$
-// Revision 1.2  2000-01-18 14:48:09+00  jjs
-// Changed to use intrinsics for speed.
-//
-// Revision 1.1  2000-01-13 17:27:52+00  jjs
-// First version that supports the loading of objects.
-//
+//================================================================================================================================
+// vector3.h
+// ---------
+//			3d vector
+//================================================================================================================================
 
 #ifndef _BS_vector3
 #define _BS_vector3
@@ -40,11 +36,7 @@ public:
 	void rationaliseAngleVector();							// only used for Euler angle vectors to put them in range
 	void  Normalise()
 	{
-#if defined(UNDER_CE)
-		float r = _InvSqrtA(x*x + y*y + z*z);
-#else
-		float r = 1.0f / (float)sqrt(x*x + y*y + z*z);
-#endif
+		float r = RECIPROCAL( (float)sqrt(x*x + y*y + z*z) );
 		x *= r;
 		y *= r;
 		z *= r;
@@ -55,9 +47,9 @@ public:
 		float r = x*x + y*y + z*z;
 		if(r > 0.00001f)
 		{
-			m = sqrtf(r);
+			m = (float)sqrt(r);
 			*mag = m;
-			r = 1.0f / m ;
+			r = RECIPROCAL( m );
 			x *= r;
 			y *= r;
 			z *= r;
@@ -84,27 +76,15 @@ public:
 
 	float FastInvMag()
 	{
-#if defined(UNDER_CE)
-		return( _InvSqrtA(x*x + y*y + z*z));
-#else
-		return( fisqrt(x*x + y*y + z*z));
-#endif
+		return( (float)fisqrt(x*x + y*y + z*z) );
 	}
 	float FastMag()
 	{
-#if defined(UNDER_CE)
-		return( sqrtf(x*x + y*y + z*z) );
-#else
-		return( fsqrt(x*x + y*y + z*z) );
-#endif
+		return( (float)fsqrt(x*x + y*y + z*z) );
 	}
 	float Mag()
 	{
-#if defined(UNDER_CE)
-		return( sqrtf(x*x + y*y + z*z) );
-#else
 		return( (float)sqrt(x*x + y*y + z*z) );
-#endif
 	}
 	float MagSquared()
 	{
@@ -112,22 +92,14 @@ public:
 	}
 	void  FastNormalise()
 	{
-#if defined(UNDER_CE)
-		float r = _InvSqrtA(x*x + y*y + z*z);
-#else
-		float r = fisqrt(x*x + y*y + z*z);
-#endif
+		float r = (float)fisqrt(x*x + y*y + z*z);
 		x *= r;
 		y *= r;
 		z *= r;
 	}
 	void  FastNormalise(vector3 * s)
 	{
-#if defined(UNDER_CE)
-		float r = _InvSqrtA(s->x*s->x + s->y*s->y + s->z*s->z);
-#else
-		float r = fisqrt(s->x*s->x + s->y*s->y + s->z*s->z);
-#endif
+		float r = (float)fisqrt(s->x*s->x + s->y*s->y + s->z*s->z);
 		x = s->x * r;
 		y = s->y * r;
 		z = s->z * r;
@@ -150,7 +122,7 @@ public:
 
 	vector3& operator /= (const float f)
 	{
-		float Temp = 1.0f /f;
+		float Temp = RECIPROCAL(f);
 		x *= Temp;
 		y *= Temp;
 		z *= Temp;
@@ -221,3 +193,7 @@ public:
 };			
 
 #endif	// _BS_vector3
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

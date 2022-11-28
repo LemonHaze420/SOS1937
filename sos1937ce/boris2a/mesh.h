@@ -1,6 +1,8 @@
-// $Header$
-
-// $Log$
+//================================================================================================================================
+// mesh.h
+// ------
+//
+//================================================================================================================================
 
 #ifndef _BS_mesh
 #define _BS_mesh
@@ -22,11 +24,11 @@ public:
 
 		triangle  * tlistPtr;		// all triangles in the mesh
 		vertex    * vlistPtr;		// all vertices in the mesh
-		long     tcount;			// total triangles in mesh
-		long     vcount;			// total vertices in mesh
+		slong     tcount;			// total triangles in mesh
+		slong     vcount;			// total vertices in mesh
 	
 		material  * mlistPtr;		// all materials in the mesh
-		long	  mcount;			// total materialse in the mesh
+		slong	  mcount;			// total materialse in the mesh
 
 		SphereSet * spheres;		// holds collision bounding information IFF it exists.
 
@@ -34,14 +36,12 @@ public:
 
 		void copyfrom(mesh *m);
 
-		LPD3DVERTEXC vertBuf;
-		int vbcount;
-
-		LPWORD *indices;
-		WORD *indcount;
-
 private:
 	
 };
 
 #endif	// _BS_mesh
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

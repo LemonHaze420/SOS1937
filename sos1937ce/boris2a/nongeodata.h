@@ -1,6 +1,8 @@
-// $Header$
-
-// $Log$
+//================================================================================================================================
+// nongeodata.h
+// ------------
+//			A single vertex of a triangle - we need its geometric co-ordinate, its vertex normal
+//================================================================================================================================
 
 #ifndef _BS_nongeodata
 #define _BS_nongeodata
@@ -16,8 +18,18 @@ class nongeodata
 		~nongeodata() {};
 
 
-	float u;
-	float v;
+			//
+			// union with integer components is for the local software renderer (when we are not using D3D or hardware)
+			//
+
+		union {
+				float u;
+				slong ui;
+		};
+		union {
+				float v;
+				slong vi;
+		};	
 
 	private:
 
@@ -25,3 +37,7 @@ class nongeodata
 
 
 #endif	// _BS_vertex
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

@@ -1,0 +1,3249 @@
+# Microsoft Developer Studio Project File - Name="CEFrontLib" - Package Owner=<4>
+# Microsoft Developer Studio Generated Build File, Format Version 6.00
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE SH4) Static Library" 0x8604
+
+CFG=CEFrontLib - Win32 (WCE SH4) Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "cefrontlib.mak".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "cefrontlib.mak" CFG="CEFrontLib - Win32 (WCE SH4) Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "CEFrontLib - Win32 (WCE SH4) Release" (based on "Win32 (WCE SH4) Static Library")
+!MESSAGE "CEFrontLib - Win32 (WCE SH4) Debug" (based on "Win32 (WCE SH4) Static Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName "CEFrontLib"
+# PROP Scc_LocalPath "Dreamcast"
+# PROP WCE_FormatVersion "6.0"
+CPP=shcl.exe
+
+!IF  "$(CFG)" == "CEFrontLib - Win32 (WCE SH4) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "WCESH4Rel"
+# PROP BASE Intermediate_Dir "WCESH4Rel"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "WCESH4Rel"
+# PROP Intermediate_Dir "WCESH4Rel"
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /MC /W3 /Zi /Ox /D _WIN32_WCE=$(CEVersion) /D "$(CEConfigName)" /D "NDEBUG" /D "SHx" /D "SH4" /D "_SH4_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_MBCS" /D "_UNICODE" /YX /Qsh4r7 /Qs /Qfast /Qgvp /c
+# ADD CPP /nologo /MC /W3 /Zi /Ox /D _WIN32_WCE=$(CEVersion) /D "$(CEConfigName)" /D "NDEBUG" /D "SHx" /D "SH4" /D "_SH4_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_MBCS" /D "_UNICODE" /FR /YX /Qsh4r7 /Qs /Qfast /Qgvp /c
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"C:\SOSGD\Track5\CEFrontLib.lib"
+
+!ELSEIF  "$(CFG)" == "CEFrontLib - Win32 (WCE SH4) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "WCESH4Dbg"
+# PROP BASE Intermediate_Dir "WCESH4Dbg"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "WCESH4Dbg"
+# PROP Intermediate_Dir "WCESH4Dbg"
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /MC /W3 /Zi /Od /D _WIN32_WCE=$(CEVersion) /D "$(CEConfigName)" /D "DEBUG" /D "SHx" /D "SH4" /D "_SH4_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_MBCS" /D "_UNICODE" /YX /Qsh4r7 /Qs /Qfast /c
+# ADD CPP /nologo /MC /W3 /Zi /D "KATANA" /D "DREAMCAST" /D _WIN32_WCE=$(CEVersion) /D "$(CEConfigName)" /D "DEBUG" /D "SHx" /D "SH4" /D "_SH4_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_MBCS" /D "_UNICODE" /YX /Qsh4r7 /Qs /Qfast /c
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LIB32=link.exe -lib
+# ADD BASE LIB32 /nologo
+# ADD LIB32 /nologo /out:"C:\SOSGD\Track5\CEFrontlib.lib"
+
+!ENDIF 
+
+# Begin Target
+
+# Name "CEFrontLib - Win32 (WCE SH4) Release"
+# Name "CEFrontLib - Win32 (WCE SH4) Debug"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Source File
+
+SOURCE=.\Body\Alphabet.cpp
+DEP_CPP_ALPHA=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\Boris2Emulation.cpp
+DEP_CPP_BORIS=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\Buttons.cpp
+DEP_CPP_BUTTO=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\FrontEndCar.cpp
+DEP_CPP_FRONT=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\FrontEndObject.cpp
+DEP_CPP_FRONTE=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\FrontEndTrack.cpp
+DEP_CPP_FRONTEN=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\IOFunctions.cpp
+DEP_CPP_IOFUN=\
+	".\ConsoleFrontLib.h"\
+	".\SOS1937\cross.h"\
+	".\SOS1937\exclamation.h"\
+	".\Sos1937\SOSLogo.h"\
+	".\SOS1937\tick.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"ceddcdrm.h"\
+	{$(INCLUDE)}"ceddstor.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"lcd.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"segagdrm.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\LocaleWord.cpp
+DEP_CPP_LOCAL=\
+	".\SOS1937\LocaleTexts.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\main.cpp
+DEP_CPP_MAIN_=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"ALLcar.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"car.h"\
+	{$(INCLUDE)}"carbody.h"\
+	{$(INCLUDE)}"carwheel.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"controller.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"Pitstop.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\Screen.cpp
+DEP_CPP_SCREE=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\Slider.cpp
+DEP_CPP_SLIDE=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Body\Word.cpp
+DEP_CPP_WORD_=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl"
+# Begin Source File
+
+SOURCE=.\Header\Alphabet.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\Boris2Emulation.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\Buttons.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\ConsoleFrontLib.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\ConsoleRegistry.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\FrontEndCar.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\FrontEndObject.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\FrontEndTrack.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\GlobalStructure.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\IOFunctions.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\LocaleTexts.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\LocaleWord.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\main.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\Screen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\Selecting.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\Slider.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Header\Word.h
+# End Source File
+# End Group
+# Begin Group "Screens"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\SOS1937\CarDetails.cpp
+DEP_CPP_CARDE=\
+	".\ConsoleFrontLib.h"\
+	".\SOS1937\CarDetails.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\CarDetails.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\Championship.cpp
+DEP_CPP_CHAMP=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\Championship.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ChampionshipOver.cpp
+DEP_CPP_CHAMPI=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ChampionshipOver.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ChooseScenario.cpp
+DEP_CPP_CHOOS=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ChooseScenario.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ControllerOptionsScreen.cpp
+DEP_CPP_CONTR=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ControllerOptionsScreen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\EnterPlayerName.cpp
+DEP_CPP_ENTER=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\EnterPlayerName.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\FrontScreen.cpp
+DEP_CPP_FRONTS=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\FrontScreen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\MemoryCardChosenScreen.cpp
+DEP_CPP_MEMOR=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\MemoryCardChosenScreen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\MemoryCardScreen.cpp
+DEP_CPP_MEMORY=\
+	".\ConsoleFrontLib.h"\
+	".\SOS1937\Selecting.h"\
+	".\Sos1937\SOSLogo.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\MemoryCardScreen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\OptionsScreen.cpp
+DEP_CPP_OPTIO=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\OptionsScreen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\RaceType.cpp
+DEP_CPP_RACET=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\RaceType.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ScenarioDetails.cpp
+DEP_CPP_SCENA=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\ScenarioDetails.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\SelectCarScreen.cpp
+DEP_CPP_SELEC=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\SelectCarScreen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\SelectTrackScreen.cpp
+DEP_CPP_SELECT=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\SelectTrackScreen.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\SingleRace.cpp
+DEP_CPP_SINGL=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\SingleRace.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\SingleRaceOver.cpp
+DEP_CPP_SINGLE=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\SingleRaceOver.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\SOS_Index.cpp
+DEP_CPP_SOS_I=\
+	".\ConsoleFrontLib.h"\
+	".\Sos1937\SOSLogo.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\Sos1937\SOS_Index.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\StartQuickRace.cpp
+DEP_CPP_START=\
+	".\ConsoleFrontLib.h"\
+	{$(INCLUDE)}"archive.h"\
+	{$(INCLUDE)}"archiveIface.h"\
+	{$(INCLUDE)}"arcstack.h"\
+	{$(INCLUDE)}"boundBox.h"\
+	{$(INCLUDE)}"BS2all.h"\
+	{$(INCLUDE)}"BS2configuration.h"\
+	{$(INCLUDE)}"BS2consts.h"\
+	{$(INCLUDE)}"BS2features.h"\
+	{$(INCLUDE)}"BS2simTypes.h"\
+	{$(INCLUDE)}"BS2utils.h"\
+	{$(INCLUDE)}"camera.h"\
+	{$(INCLUDE)}"collide.h"\
+	{$(INCLUDE)}"debugger.h"\
+	{$(INCLUDE)}"debugmemlib.h"\
+	{$(INCLUDE)}"display.h"\
+	{$(INCLUDE)}"edge.h"\
+	{$(INCLUDE)}"engine.h"\
+	{$(INCLUDE)}"errorlib.h"\
+	{$(INCLUDE)}"FloatMathLib.h"\
+	{$(INCLUDE)}"Font.h"\
+	{$(INCLUDE)}"grdebug.h"\
+	{$(INCLUDE)}"Header\Alphabet.h"\
+	{$(INCLUDE)}"Header\Boris2Emulation.h"\
+	{$(INCLUDE)}"Header\Buttons.h"\
+	{$(INCLUDE)}"Header\FrontEndObject.h"\
+	{$(INCLUDE)}"Header\IOFunctions.h"\
+	{$(INCLUDE)}"Header\LocaleWord.h"\
+	{$(INCLUDE)}"Header\main.h"\
+	{$(INCLUDE)}"Header\Screen.h"\
+	{$(INCLUDE)}"Header\Slider.h"\
+	{$(INCLUDE)}"Header\Word.h"\
+	{$(INCLUDE)}"hunk.h"\
+	{$(INCLUDE)}"intrecip.h"\
+	{$(INCLUDE)}"linkToTriangle.h"\
+	{$(INCLUDE)}"mapledev.h"\
+	{$(INCLUDE)}"material.h"\
+	{$(INCLUDE)}"matrix3x4.h"\
+	{$(INCLUDE)}"mesh.h"\
+	{$(INCLUDE)}"model.h"\
+	{$(INCLUDE)}"modelStore.h"\
+	{$(INCLUDE)}"nongeodata.h"\
+	{$(INCLUDE)}"object.h"\
+	{$(INCLUDE)}"outLists.h"\
+	{$(INCLUDE)}"outTriangle.h"\
+	{$(INCLUDE)}"perstore.h"\
+	{$(INCLUDE)}"pointdata2d.h"\
+	{$(INCLUDE)}"pointdata3d.h"\
+	{$(INCLUDE)}"pool.h"\
+	{$(INCLUDE)}"quaternion.h"\
+	{$(INCLUDE)}"racingLine.h"\
+	{$(INCLUDE)}"RboundBox.h"\
+	{$(INCLUDE)}"rgraphics.h"\
+	{$(INCLUDE)}"rollOverNumber.h"\
+	{$(INCLUDE)}"shintr.h"\
+	{$(INCLUDE)}"shsgintr.h"\
+	{$(INCLUDE)}"SineTable.h"\
+	{$(INCLUDE)}"sky.h"\
+	{$(INCLUDE)}"sort.h"\
+	{$(INCLUDE)}"sortlistentry.h"\
+	{$(INCLUDE)}"SOS1937\Championship.h"\
+	{$(INCLUDE)}"SOS1937\ChampionshipOver.h"\
+	{$(INCLUDE)}"Sos1937\ChooseOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\ChooseScenario.h"\
+	{$(INCLUDE)}"SOS1937\ControllerOptionsScreen.h"\
+	{$(INCLUDE)}"SOS1937\EnterPlayerName.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndCar.h"\
+	{$(INCLUDE)}"SOS1937\FrontEndTrack.h"\
+	{$(INCLUDE)}"Sos1937\FrontScreen.h"\
+	{$(INCLUDE)}"SOS1937\GlobalStructure.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardChosenScreen.h"\
+	{$(INCLUDE)}"SOS1937\MemoryCardScreen.h"\
+	{$(INCLUDE)}"Sos1937\OptionsScreen.h"\
+	{$(INCLUDE)}"Sos1937\RaceType.h"\
+	{$(INCLUDE)}"SOS1937\ScenarioDetails.h"\
+	{$(INCLUDE)}"Sos1937\SelectCarScreen.h"\
+	{$(INCLUDE)}"Sos1937\SelectTrackScreen.h"\
+	{$(INCLUDE)}"SOS1937\SingleRace.h"\
+	{$(INCLUDE)}"SOS1937\SingleRaceOver.h"\
+	{$(INCLUDE)}"Sos1937\SOS_Index.h"\
+	{$(INCLUDE)}"SOS1937\StartQuickRace.h"\
+	{$(INCLUDE)}"Sphere.h"\
+	{$(INCLUDE)}"spline.h"\
+	{$(INCLUDE)}"spriteFX.h"\
+	{$(INCLUDE)}"spriteFXentry.h"\
+	{$(INCLUDE)}"tarc.h"\
+	{$(INCLUDE)}"tarcf.h"\
+	{$(INCLUDE)}"tarcman.h"\
+	{$(INCLUDE)}"textureStore.h"\
+	{$(INCLUDE)}"TimeStats.h"\
+	{$(INCLUDE)}"timing.h"\
+	{$(INCLUDE)}"triangle.h"\
+	{$(INCLUDE)}"vector2P.h"\
+	{$(INCLUDE)}"vector3.h"\
+	{$(INCLUDE)}"vertex.h"\
+	{$(INCLUDE)}"world.h"\
+	{$(INCLUDE)}"Xmulder.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\SOS1937\StartQuickRace.h
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE=.\readme.txt
+# End Source File
+# End Target
+# End Project

@@ -1,10 +1,3 @@
-// $Header$
-
-// $Log$
-// Revision 1.1  2000-01-13 17:27:53+00  jjs
-// First version that supports the loading of objects.
-//
-
 //================================================================================================================================
 // Xmulder.h
 // --------
@@ -36,11 +29,11 @@ struct Xmulder_Header {
 	unsigned long magic;
 	char name[64];
 	float minx,miny,minz,maxx,maxy,maxz;
-	long tricount;							// total number of triangles
-	long vertexcount;						// total number of geometric vertices
-	long texturecount;						// total number of textures
-	long materialcount;					// total number of materials
-	long normalcount;
+	unsigned long tricount;							// total number of triangles
+	unsigned long vertexcount;						// total number of geometric vertices
+	unsigned long texturecount;						// total number of textures
+	unsigned long materialcount;					// total number of materials
+	unsigned long normalcount;
 };
 
 struct Xmulder_VertexGEO {
@@ -87,5 +80,11 @@ struct Xmulder_Triangle {
 
 
 void loadMulderFile( char * filename, mesh * meshdata, float scale, char * SSname, bool uniqueTextures);
-
 void initialiseModelLoading( void );
+
+
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================
+

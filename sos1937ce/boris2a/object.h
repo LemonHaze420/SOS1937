@@ -1,6 +1,8 @@
-// $Header$
-
-// $Log$
+//================================================================================================================================
+// object.h
+// --------
+//
+//================================================================================================================================
 
 #ifndef _BS_object
 #define _BS_object
@@ -87,7 +89,7 @@ public:
 	bool changed;							// true iff the nodes position or angle have been altered.
 	
 	
-//	RboundBox	transformedBoundingBox;		// boundingBox is in modelData->boundingBox;
+	RboundBox	transformedBoundingBox;		// boundingBox is in modelData->boundingBox;
 	// - the transformed contains 8 corner co-ordinate vectors and is held here
 	// for use by both physics and rendering.
 	
@@ -158,3 +160,8 @@ public:
 };
 
 #endif	// _BS_error
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================
+

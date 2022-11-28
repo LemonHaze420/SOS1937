@@ -1,23 +1,27 @@
-// $Header$
-
-// $Log$
+//================================================================================================================================
+// timing.h
+// --------
+//
+//================================================================================================================================
 
 #ifndef _BS_timing
 #define _BS_timing
+
+#include <stdio.h>
 
 class timer
 {
 
 	public:
 			timer( float ticksPerSecond );
-			timer(){}
-			~timer(){}
+			timer();
+			~timer(){};
 
 			void  setTimer( float ticksPerSecond );
 			ulong getTicks();
 			
 	private:
-			long tickspassed;
+			slong tickspassed;
 			float tpsDIVcps;
 			bool  started;			// true iff we have called 'getTicks; at least once
 
@@ -27,3 +31,6 @@ class timer
 
 #endif	// _BS_timing
 
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

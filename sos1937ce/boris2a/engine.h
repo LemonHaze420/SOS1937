@@ -1,9 +1,8 @@
-// $Header$
-
-// $Log$
-// Revision 1.1  2000-01-13 17:27:46+00  jjs
-// First version that supports the loading of objects.
+//================================================================================================================================
+// engine.h
+// --------
 //
+//================================================================================================================================
 
 #ifndef _BS_engine
 #define _BS_engine
@@ -26,7 +25,7 @@ class engine
 	
 public:
 	
-	engine(long ttotal, long vtotal, long ntotal, float physicsTicks);
+	engine( bool useSoftware,  slong outListCount, slong ttotal, slong vtotal, slong ntotal, float physicsTicks);
 	~engine();
 	
 	//	void shadowToGround( float width, float height, matrix3x4 * m, float maxy );
@@ -82,12 +81,7 @@ public:
 	{
 		float cosa,sina,x,y;
 		
-#if defined(SH4)
-		_SinCosA(&sina, &cosa, rot);
-#else
-		cosa = (float)cos(rot);
-		sina = (float)sin(rot);
-#endif
+		cosa = mySineAndCosine(rot,&sina);
 		x = *rx;
 		y = *ry;
 		
@@ -132,8 +126,6 @@ public:
 	void  addTo2Dlist( float x, float y, float w, float h,
 		float u, float v, float uw, float vh,
 		DWORD texHandle, float z);
-
-	void inline OFFSCREEN(float x3, float y3, float z3, int &mask);
 	
 	// JCF - rotated versions, single tri version
 	
@@ -264,7 +256,7 @@ public:
 	display		* currentdisplay;
 	camera		* currentcamera;
 	world		* currentworld;
-//	sky			* currentSky;
+	sky			* currentSky;
 	
 	object		* objectList;
 	
@@ -287,10 +279,10 @@ public:
 	ulong UdiffuseColour;
 	
 	//
-//	void project( vector2P * v2,  vector3 * v, float l , float sl);	// project a 3d coordinate to 2d (with 3d z component)
-//	void project( vector2P * v2,  float vx, float vy, float vz, float l , float sl );
-//	void zLimitedproject( vector2P * v2,  vector3 * v, float l, float sl );
-//	void zLimitedproject( vector2P * v2,  float vx, float vy, float vz, float l , float sl);
+	void project( vector2P * v2,  vector3 * v, float l , float sl);	// project a 3d coordinate to 2d (with 3d z component)
+	void project( vector2P * v2,  float vx, float vy, float vz, float l , float sl );
+	void zLimitedproject( vector2P * v2,  vector3 * v, float l, float sl );
+	void zLimitedproject( vector2P * v2,  float vx, float vy, float vz, float l , float sl);
 	
 	void updateDCdata();		// local method called for updating data dependent on both display and camera
 	
@@ -318,17 +310,17 @@ public:
 	
 	// outLists		( lists of triangles to render )
 	
-//	slong olCount;					// Number of Outlists 
-//	outLists ** outListListPtr;		// array of outlists
-//	outLists * currentOutListPtr;	// points to outlist being used now
-//	slong olCountdown;				// counts down from olCount to 0 then back so that we can advance 'currentOutListPtr'
+	slong olCount;					// Number of Outlists 
+	outLists ** outListListPtr;		// array of outlists
+	outLists * currentOutListPtr;	// points to outlist being used now
+	slong olCountdown;				// counts down from olCount to 0 then back so that we can advance 'currentOutListPtr'
 	
 	// globalpctr is incremented when stuff is being rendered to distinguish from previous renderings
 	
 	ulong globalpctr;
 	
 	
-#if 0	
+	
 	// internal routinez needed
 	
 	void splitEdgeZ( pointdata2d * r, pointdata3d * a, pointdata3d * b, float splitz );
@@ -359,7 +351,6 @@ public:
 	void process2DTriangleY( pointdata2d * p, pointdata2d * q, pointdata2d * r);
 	void outputTriangle( pointdata2d * p, pointdata2d * q, pointdata2d * r);
 	//void processTriangle( triangle * triPtr );
-#endif
 	void processObjectLit( object * objPtr );
 	void processObjectUnlit( object * objPtr );
 	void processObjectShadow( object * objPtr );
@@ -374,32 +365,32 @@ public:
 	bool checkRboundboxVisibility(RboundBox * r);		
 	
 	void zsplitting();
-//	void Skyzsplitting();
-//	void skysplitEdgeZ( pointdata2d * r, pointdata3d * a, pointdata3d * b, float splitz );
+	void Skyzsplitting();
+	void skysplitEdgeZ( pointdata2d * r, pointdata3d * a, pointdata3d * b, float splitz );
 	
 	
 	triangle * triPtr;
-//	pointdata2d projectedp, projectedq, projectedr;
+	pointdata2d projectedp, projectedq, projectedr;
 	
 				// SpriteFX List					
 	
-//	spriteFXentry * spriteFXlist;
-//	void  renderSpriteFXlist();							// update and render spriteFX's
-//	spriteFXentry *  appendSpriteFX( spriteFX * sfx, vector3 * position, ulong * counter, bool fU, bool fV );		// add sprite to engine list
+	spriteFXentry * spriteFXlist;
+	void  renderSpriteFXlist();							// update and render spriteFX's
+	spriteFXentry *  appendSpriteFX( spriteFX * sfx, vector3 * position, ulong * counter, bool fU, bool fV );		// add sprite to engine list
 				// sky
 	
-//	void setCurrentSky( sky * s )
-//	{
-//		if( (currentSky = s) != NULL )
-//			skyon = true;
-//	}
+	void setCurrentSky( sky * s )
+	{
+		if( (currentSky = s) != NULL )
+			skyon = true;
+	}
 	// environment map of sky = an alpha texture
 	
 	void setCurrentSkyEnvironmentMap( char * filename );
 	
 	BorisMaterial  skyEnvironment;				// holds texturehandle and flags 
 	BorisMaterial  detailMap;
-	BorisMaterial	BumpEnv;
+	
 	
 				// envmapping = flag used during rendering to know whether to calculate a second textures u,v s for
 				// environment mapping.
@@ -503,28 +494,28 @@ public:
 	void showmagnitude( long num, float min, float max, float value );
 	void showmagdir( long num, float max, vector3 vect);
 				
-//	bool doesSpriteFXentryExist( spriteFXentry * e );
+	bool doesSpriteFXentryExist( spriteFXentry * e );
 				
 	int GetLod(class model *m,float z);
 
 	float lod_threshold_scale;
 
-	DWORD Caps;
-
-//	Pool<spriteFXentry> *spritePool;
-//	Pool<spriteVertexGroup> *vertexPool;
+	Pool<spriteFXentry> *spritePool;
+	Pool<spriteVertexGroup> *vertexPool;
 
 	void DrawLine(float x1,float y1,float x2,float y2,DWORD col);
 
 	// the material must be unique to each particle in the frame; don't initialise it, it's
 	// just used as storage.
 
-//	void DrawParticle(vector3 *v,DWORD col,float psize,material *mat); 
-	void renderTriangle(triangle *triPtr);
-	void getWorldFromScreen(vector3 *v,float x,float y,float z);
+	void DrawParticle(vector3 *v,DWORD col,float psize,material *mat); 
 };
 
 
 
 
 #endif	// _BS_engine
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

@@ -1,6 +1,8 @@
-// $Header$
-
-// $Log$
+//================================================================================================================================
+// archiveIface.h
+// --------------
+//
+//================================================================================================================================
 
 #ifndef _BS_archiveIface
 #define _BS_archiveIface
@@ -21,12 +23,16 @@ ulong arcExtract_txt(   char * fileName);
 ulong arcExtract_rlf(   char * fileName);
 ulong arcExtract_mdf(   char * fileName);
 ulong arcExtract_wav(   char * fileName);
-bool  arcGets( char * outStr, long count, ulong handle );
+bool  arcGets( char * outStr, ulong count, ulong handle );
 void  arcDispose( ulong handle );
 char * arcGetData( ulong handle );
 long arcGetSize( ulong handle );
-void  arcRead( char * outStr, long count, ulong handle );
-bool  arcGets_NoWhiteSpace( char * outStr, long count, ulong handle );
+void  arcRead( char * outStr, ulong count, ulong handle );
+bool  arcGets_NoWhiteSpace( char * outStr, ulong count, ulong handle );
 
 
 #endif	// _BS_archiveIface
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

@@ -1,9 +1,8 @@
-// $Header$
-
-// $Log$
-// Revision 1.1  2000-01-17 12:37:54+00  jjs
-// Latest version that has corrected Alpha Test
+//================================================================================================================================
+// camera.h
+// --------
 //
+//================================================================================================================================
 
 #ifndef _BS_camera
 #define _BS_camera
@@ -15,7 +14,7 @@ class camera
 public:
 	camera( vector3 * p, float zeyevalue, float zback);
 	camera();
-//	~camera();
+	~camera();
 	
 	
 	void formCameraTransformMatrix();
@@ -109,7 +108,7 @@ public:
 	object * attached;		// 0 = no attached object
 
 	
-	signed char Octant;
+	schar Octant;
 	
 	
 	// in case we wish to link cameras to form a chain.
@@ -133,3 +132,7 @@ public:
 
 
 #endif	// _BS_camera
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================

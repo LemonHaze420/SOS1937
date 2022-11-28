@@ -1,64 +1,44 @@
-// $Header$
-
-// $Log$
-// Revision 1.3  2000-03-06 15:17:00+00  jjs
-// Removed texture deleter.
+//================================================================================================================================
+// mesh.cpp
+// ----------
 //
-// Revision 1.2  2000-01-27 16:39:10+00  jjs
-// Allow textures to be delted on mesh deletion.
-//
-// Revision 1.1  2000-01-13 17:27:05+00  jjs
-// First version that supports the loading of objects.
-//
+//================================================================================================================================
 
 #include "BS2all.h"
 
 mesh::mesh()
 {
-	indcount = NULL;
-	indices  = NULL;
-	vertBuf	 = NULL;
 	tlistPtr = NULL;
 	vlistPtr = NULL;
 	mlistPtr = NULL;
 	geoDataPtr=NULL;
 }
+  
+extern void dprintf(char *,...);
 
 mesh::~mesh()
 {
-	if (indcount) 
-	{
-		delete[] indcount;
-		indcount=NULL;
-	}
-	if (indices) 
-	{
-		delete[] indices;
-		indices=NULL;
-	}
-	if (vertBuf) 
-	{
-		delete[] vertBuf;
-		vertBuf=NULL;
-	}
+	long i;
+
+	dprintf("deleting triangles %lx",tlistPtr);
 	if (tlistPtr) 
 	{
 		delete[] tlistPtr;
 		tlistPtr=NULL;
 	}
+	dprintf("deleting vertices %lx",vlistPtr);
 	if (vlistPtr) 
 	{	
 		delete[] vlistPtr;
 		vlistPtr=NULL;
 	}
+	dprintf("deleting materials %lx",mlistPtr);
 	if (mlistPtr) 
 	{
-//		for(int i = 0 ; i < mcount ; ++i)
-//			if(mlistPtr[i].textureDataPtr)
-//				removeTexture(mlistPtr[i].textureDataPtr);
 		delete[] mlistPtr;
 		mlistPtr=NULL;
 	}
+	dprintf("deleting geodata %lx",geoDataPtr);
 	if( geoDataPtr )
 	{
 		delete[] geoDataPtr;
@@ -92,3 +72,7 @@ void mesh::copyfrom(mesh *m)
 
 	// v3list copy todo 
 }
+
+//================================================================================================================================
+// END OF FILE
+//================================================================================================================================

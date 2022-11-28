@@ -1,14 +1,12 @@
-// $Header$
-
-// $Log$
-// Revision 1.2  2000-01-17 12:37:07+00  jjs
-// Latest version has corrected Alpha Tested polygons.
-//
-// Revision 1.1  2000-01-13 17:27:08+00  jjs
-// First version that supports the loading of objects.
-//
+//================================================================================================================================
+// Xmulder.cpp
+// -----------
+//				- load a mulder file
+//================================================================================================================================
 
 #include "BS2all.h"
+
+extern void dprintf(char *,...);
 
 #define	VERTEXCOMBINE	0
 
@@ -16,6 +14,8 @@ char tempBuffer[128];
 char tempBuffer1[128];
 ulong GBLmaterialIndex;				// advanced once for every MATERIAL loaded, for every MODEL... this global
 									// value is only used for sorting (hardware rendering)
+
+extern debugger DBGR;
 
 void initialiseModelLoading( void )
 {
@@ -44,6 +44,8 @@ ulong hexto32bit( char * ascii,long count)
 
 		ascii++;
 	}
+	char buf[64];
+	sprintf(buf,"hex string: %lx\n",total);OutputDebugString(buf);
 	return( total );
 }
 
@@ -51,30 +53,7 @@ ulong hexto32bit( char * ascii,long count)
 
 
 
-LPD3DVERTEXC jjsVert;
-int numjjsVert;
-
-WORD Addvertex(pointdata3d &p)
-{
-	int i;
-	D3DVERTEXC temp;
-	
-	temp.x = p.v->geoCoord.x;
-	temp.y = p.v->geoCoord.y;
-	temp.z = p.v->geoCoord.z;
-	temp.nx = p.v->vertexNormal.x;
-	temp.ny = p.v->vertexNormal.y;
-	temp.nz = p.v->vertexNormal.z;
-	temp.color = 0xffc0c0c0;
-	temp.tu = p.nv.u;
-	temp.tv = p.nv.v;
-	
-	for(i=0;i<numjjsVert; ++i)
-		if(!memcmp(&jjsVert[i],&temp,sizeof(D3DVERTEXC)))
-			return i;
-	jjsVert[numjjsVert]=temp;
-	return numjjsVert++;
-}
+debugger DBGR ;
 
 void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSname, bool uniqueTextures)
 {
@@ -86,7 +65,7 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 	triangle * thisTrianglePtr;
 	vertex   * thisVertexPtr;
 	ulong texhandle;
-	long i;
+	slong i;
 
 
 	texhandle = arcExtract_mul( filename );
@@ -95,10 +74,12 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 	// read in the header
 	// - - - - - - - - - - - - - -
 
+	dprintf("loading mulder file %s / %s",filename,SSname);
+
 	arcRead(  (char * )&mulderHeader, sizeof(Xmulder_Header), texhandle );
 
-//	if (mulderHeader.magic != FHEADER_MAGIC)
-//		fatalError("Mulder file magic number is WRONG!!");
+	if (mulderHeader.magic != FHEADER_MAGIC)
+		fatalError("Mulder file magic number is WRONG!!");
 
 	meshData->tcount   = mulderHeader.tricount;	
 	meshData->vcount   = mulderHeader.vertexcount;
@@ -131,14 +112,17 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 		newvector.y = mulderVertexGEO.y * scale;
 		newvector.z = mulderVertexGEO.z * scale;
 
-		thisVertexPtr->geoCoord = newvector;
+		thisVertexPtr->geoCoord = geoPtr++;
+		*thisVertexPtr->geoCoord = newvector;
 
-		if( thisVertexPtr->geoCoord.x < meshData->MinCoordX) meshData->MinCoordX = thisVertexPtr->geoCoord.x;
-		if( thisVertexPtr->geoCoord.x > meshData->MaxCoordX) meshData->MaxCoordX = thisVertexPtr->geoCoord.x;
-		if( thisVertexPtr->geoCoord.y < meshData->MinCoordY) meshData->MinCoordY = thisVertexPtr->geoCoord.y;
-		if( thisVertexPtr->geoCoord.y > meshData->MaxCoordY) meshData->MaxCoordY = thisVertexPtr->geoCoord.y;
-		if( thisVertexPtr->geoCoord.z < meshData->MinCoordZ) meshData->MinCoordZ = thisVertexPtr->geoCoord.z;
-		if( thisVertexPtr->geoCoord.z > meshData->MaxCoordZ) meshData->MaxCoordZ = thisVertexPtr->geoCoord.z;
+		if( thisVertexPtr->geoCoord->x < meshData->MinCoordX) meshData->MinCoordX = thisVertexPtr->geoCoord->x;
+		if( thisVertexPtr->geoCoord->x > meshData->MaxCoordX) meshData->MaxCoordX = thisVertexPtr->geoCoord->x;
+		if( thisVertexPtr->geoCoord->y < meshData->MinCoordY) meshData->MinCoordY = thisVertexPtr->geoCoord->y;
+		if( thisVertexPtr->geoCoord->y > meshData->MaxCoordY) meshData->MaxCoordY = thisVertexPtr->geoCoord->y;
+		if( thisVertexPtr->geoCoord->z < meshData->MinCoordZ) meshData->MinCoordZ = thisVertexPtr->geoCoord->z;
+		if( thisVertexPtr->geoCoord->z > meshData->MaxCoordZ) meshData->MaxCoordZ = thisVertexPtr->geoCoord->z;
+
+		thisVertexPtr->tcnt = thisVertexPtr->pcnt = 0;		// initialised  (pcnt will be used here temporarily for
 															// calculating  vertexnormals.
 		thisVertexPtr++;
 	}
@@ -206,7 +190,9 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 		// the renderer to use!!
 		//
 			
+		char buf[64];
 		static int debugcount=0;
+		sprintf(buf,"%d %s\n",debugcount++,mulderMaterial.name);OutputDebugString(buf);
 
 
 		thisMatPtr->bm.textureHandle = 0;
@@ -244,10 +230,12 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 
 				if( flagmask & (1<<19) )
 				{
+					dprintf("blackflag: %s",mulderMaterial.name);
 					thisMatPtr->bm.flags |= MAT_BLACKFLAG;
 				}
 				if( flagmask & (1<<18) )
 				{
+					dprintf("revlimit: %s",mulderMaterial.name);
 					thisMatPtr->bm.flags |= MAT_REVLIMIT;
 				}
 
@@ -258,10 +246,9 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 				if( flagmask & (1<<22) )
 				{
 					thisMatPtr->bm.flags |= MAT_PITSTOP;
+					dprintf("Pit : %s",mulderMaterial.name);
 				}
 
-
-				if( flagmask & (1<<21) ) thisMatPtr->bm.flags |= MAT_GROUND;
 
 				if( flagmask & (1<<15) ) thisMatPtr->bm.flags |= MAT_DOUBLESIDED;
 				if( flagmask & (1<<14) ) thisMatPtr->bm.flags |= MAT_SCLAMP;
@@ -272,6 +259,8 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 				{
 					thisMatPtr->bm.flags |= MAT_COLLIDABLE;
 					thisMatPtr->bm.flags |= MAT_WALL;
+	
+					dprintf("Wall : %s",mulderMaterial.name);
 
 				}
 				if( flagmask & (1<<9) ) thisMatPtr->bm.flags |= MAT_WATER;
@@ -356,21 +345,9 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 
 	vector3  tempvectorr, tempvectorq;
 
-	LPWORD *indBuf;
-	WORD* indCount;
-	WORD ind0, ind1, ind2;
+//DBGR.Dprintf("Pt 12");
 
-	// allocate temporary memory for vertices - worst case is tricount*3
-	jjsVert = new D3DVERTEXC[meshData->tcount * 3];
-	numjjsVert=0;
-
-	indBuf = new LPWORD[meshData->mcount];
-	for(i=0; i<meshData->mcount; ++i)
-		indBuf[i] = new WORD[meshData->tcount * 3];
-	indCount = new WORD[meshData->mcount];
-	memset(indCount,0,sizeof(WORD) * meshData->mcount);
-
-	for (i = 0; i < meshData->tcount; i++ )
+	for (i = meshData->tcount; i--; )
 	{
 		//MYfread(&mulderTriangle, sizeof(Xmulder_Triangle), 1, mulderFP );
 		arcRead(  (char * )&mulderTriangle, sizeof(Xmulder_Triangle), texhandle);
@@ -378,20 +355,22 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 		thisTrianglePtr->p.v    = meshData->vlistPtr + mulderTriangle.v[0];	// points to correct vertex in allocated list
 		thisTrianglePtr->p.nv.u = mulderTriangle.ng[0].u;
 		thisTrianglePtr->p.nv.v = mulderTriangle.ng[0].v;
-		
-		
+
 		thisTrianglePtr->q.v    = meshData->vlistPtr + mulderTriangle.v[1];	// points to correct vertex in allocated list
 		thisTrianglePtr->q.nv.u = mulderTriangle.ng[1].u;
 		thisTrianglePtr->q.nv.v = mulderTriangle.ng[1].v;
-		
-		
+
 		thisTrianglePtr->r.v    = meshData->vlistPtr + mulderTriangle.v[2];	// points to correct vertex in allocated list
 		thisTrianglePtr->r.nv.u = mulderTriangle.ng[2].u;
 		thisTrianglePtr->r.nv.v = mulderTriangle.ng[2].v;
 		
-		
+//		thisTrianglePtr->p.v->connectToTriangle( thisTrianglePtr );		// creates a link to parent triangle
+//		thisTrianglePtr->q.v->connectToTriangle( thisTrianglePtr );		//
+//		thisTrianglePtr->r.v->connectToTriangle( thisTrianglePtr );		//
+
+
 		thisTrianglePtr->mtl = &meshData->mlistPtr[mulderTriangle.mat];
-				
+
 		thisTrianglePtr->faceNormal.x = mulderTriangle.faceNormal.x;
 		thisTrianglePtr->faceNormal.y = mulderTriangle.faceNormal.y;
 		thisTrianglePtr->faceNormal.z = mulderTriangle.faceNormal.z;
@@ -403,9 +382,9 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 
 		vector3 *j, *k, *l;
 
-		j = &thisTrianglePtr->p.v->geoCoord;
- 		k = &thisTrianglePtr->q.v->geoCoord;
-		l = &thisTrianglePtr->r.v->geoCoord;
+		j = thisTrianglePtr->p.v->geoCoord;
+ 		k = thisTrianglePtr->q.v->geoCoord;
+		l = thisTrianglePtr->r.v->geoCoord;
 
 		float xkj = k->x - j->x;
 		float ykj = k->y - j->y;
@@ -432,36 +411,28 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 											 thisTrianglePtr->C * k->z));
 
 		if( thisTrianglePtr->B ) 
-			thisTrianglePtr->minusOneOverB = - 1.0f/ thisTrianglePtr->B ;//mulderTriangle.faceNormal.y); 
+			thisTrianglePtr->minusOneOverB = - RECIPROCAL( thisTrianglePtr->B );//mulderTriangle.faceNormal.y); 
 
 		thisTrianglePtr->ABC   =
-			1.0f / ( thisTrianglePtr->A * thisTrianglePtr->A + 
+			RECIPROCAL( thisTrianglePtr->A * thisTrianglePtr->A + 
 						thisTrianglePtr->B * thisTrianglePtr->B + 
 						thisTrianglePtr->C * thisTrianglePtr->C );
 
-		minmax3( thisTrianglePtr->p.v->geoCoord.x,
-				 thisTrianglePtr->q.v->geoCoord.x,
-				 thisTrianglePtr->r.v->geoCoord.x, &thisTrianglePtr->minLimit.x, &thisTrianglePtr->maxLimit.x );
-		minmax3( thisTrianglePtr->p.v->geoCoord.y,
-				 thisTrianglePtr->q.v->geoCoord.y,
-				 thisTrianglePtr->r.v->geoCoord.y, &thisTrianglePtr->minLimit.y, &thisTrianglePtr->maxLimit.y );
-		minmax3( thisTrianglePtr->p.v->geoCoord.z,
-				 thisTrianglePtr->q.v->geoCoord.z,
-				 thisTrianglePtr->r.v->geoCoord.z, &thisTrianglePtr->minLimit.z, &thisTrianglePtr->maxLimit.z );
+		minmax3( thisTrianglePtr->p.v->geoCoord->x,
+				 thisTrianglePtr->q.v->geoCoord->x,
+				 thisTrianglePtr->r.v->geoCoord->x, &thisTrianglePtr->minLimit.x, &thisTrianglePtr->maxLimit.x );
+		minmax3( thisTrianglePtr->p.v->geoCoord->y,
+				 thisTrianglePtr->q.v->geoCoord->y,
+				 thisTrianglePtr->r.v->geoCoord->y, &thisTrianglePtr->minLimit.y, &thisTrianglePtr->maxLimit.y );
+		minmax3( thisTrianglePtr->p.v->geoCoord->z,
+				 thisTrianglePtr->q.v->geoCoord->z,
+				 thisTrianglePtr->r.v->geoCoord->z, &thisTrianglePtr->minLimit.z, &thisTrianglePtr->maxLimit.z );
 
-//		thisTrianglePtr->faceNormalOctant = normalOctantCode(&thisTrianglePtr->faceNormal);
+		thisTrianglePtr->faceNormalOctant = normalOctantCode(&thisTrianglePtr->faceNormal);
 
 		thisTrianglePtr->p.v->vertexNormal = vertexNormalList[ mulderTriangle.n[0] ];
 		thisTrianglePtr->q.v->vertexNormal = vertexNormalList[ mulderTriangle.n[1] ];
 		thisTrianglePtr->r.v->vertexNormal = vertexNormalList[ mulderTriangle.n[2] ];
-
-		ind0 = Addvertex(thisTrianglePtr->p);
-		ind1 = Addvertex(thisTrianglePtr->q);
-		ind2 = Addvertex(thisTrianglePtr->r);
-
-		indBuf[mulderTriangle.mat][indCount[mulderTriangle.mat]++] = ind0;
-		indBuf[mulderTriangle.mat][indCount[mulderTriangle.mat]++] = ind1;
-		indBuf[mulderTriangle.mat][indCount[mulderTriangle.mat]++] = ind2;
 
 		thisTrianglePtr->pcnt = 0;
 
@@ -473,7 +444,7 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 		tempf = l->distanceSquared(&thisTrianglePtr->centroid);
 		if( tempf > thisTrianglePtr->boundingRadiusSquared ) thisTrianglePtr->boundingRadiusSquared = tempf;
 					
-		thisTrianglePtr->boundingRadius = sqrtf(thisTrianglePtr->boundingRadiusSquared);
+		thisTrianglePtr->boundingRadius = (float)sqrt(thisTrianglePtr->boundingRadiusSquared);
 
 		thisTrianglePtr++;
 	}
@@ -492,6 +463,8 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 
 	arcDispose( texhandle );
 
+	dprintf("file loaded... processing sphere set");
+
 	//
 	// Now load in the sphere set file IF ONE EXISTS!!!!!!
 	//
@@ -503,26 +476,22 @@ void loadMulderFile( char * filename, mesh * meshData, float scale, char * SSnam
 		meshData->spheres = new SphereSet(SSname, scale);
 		
 	}
-	
-	meshData->indices = new LPWORD[meshData->mcount];
-	meshData->indcount = new WORD[meshData->mcount];
-	
-	meshData->vertBuf = new D3DVERTEXC[numjjsVert];
-	
-	memcpy(meshData->vertBuf,jjsVert,sizeof(D3DVERTEXC) * numjjsVert);
-	
-	meshData->vbcount = numjjsVert;
-	
-	for(i=0;i<meshData->mcount; ++i)
-	{
-		meshData->indices[i] = new WORD[indCount[i]];
-		memcpy(meshData->indices[i], indBuf[i], indCount[i] * sizeof(WORD));
-		meshData->indcount[i] = indCount[i];
-		delete indBuf[i];
-	}
-	
-	// Clear up temporary buffers
-	delete[] jjsVert;
-	delete[] indBuf;
-	delete[] indCount;
+
+
+	//-------------------------------------------------------------------
+	// test code - examine list of triangles for common vertex geocoords.
+	//-------------------------------------------------------------------
+
+	//
+	//
+	//
+
+	dprintf("mulder load completed");
+
 }
+
+
+//================================================================================================================================
+// END OF FILE
+//================================================================================================================================
+

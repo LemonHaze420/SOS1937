@@ -1,6 +1,8 @@
-// $Header$
-
-// $Log$
+//================================================================================================================================
+// display.h
+// --------
+//
+//================================================================================================================================
 
 #ifndef _BS_display
 #define _BS_display
@@ -10,18 +12,23 @@ class display
 	friend class engine;
 
 	public:
-			display( long pixw, long pixh, long posx, long posy);
+			display( slong pixw, slong pixh, slong posx, slong posy);
 			~display();
 
 
 //	private:
-			long pixelwidth;
-			long pixelheight;
-			long deltaX;
-			long deltaY;
+			slong pixelwidth;
+			slong pixelheight;
+			slong deltaX;
+			slong deltaY;
 			bool mirrorx;
 			int mirrorVal;
 
+		//	slong positionx, positiony;
 };
 
 #endif	// _BS_display
+
+//================================================================================================================================
+//END OF FILE
+//================================================================================================================================
